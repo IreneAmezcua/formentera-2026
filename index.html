@@ -567,48 +567,55 @@
             <p>Déjanos tus datos y te enviaremos toda la información del retiro, próximos pasos y disponibilidad de plazas para esta edición.</p>
           </div>
           <div class="form-card">
-            <form id="leadForm">
-              <div class="form-grid">
-                <div class="field">
-                  <label for="nombre">Nombre</label>
-                  <input id="nombre" name="nombre" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" name="email" required>
-                </div>
-                <div class="field full">
-                  <label for="telefono">Teléfono / WhatsApp</label>
-                  <input id="telefono" name="telefono" required>
-                </div>
-                <div class="field full">
-                  <label for="motivacion">¿Qué te ha llamado la atención de este retiro?</label>
-                  <textarea id="motivacion" name="motivacion" required></textarea>
-                </div>
-                <div class="field full">
-                  <label for="salud">¿En qué punto estás ahora mismo con tu salud?</label>
-                  <select id="salud" name="salud">
-                    <option>Quiero empezar a cuidarme pero no sé por dónde</option>
-                    <option>Ya me cuido, pero me falta claridad</option>
-                    <option>Tengo problemas digestivos / inflamación</option>
-                    <option>Busco parar y resetear hábitos</option>
-                    <option>Otro</option>
-                  </select>
-                </div>
-                <div class="field full">
-                  <label for="fechas">¿Tienes disponibilidad para las fechas?</label>
-                  <select id="fechas" name="fechas">
-                    <option>Sí</option>
-                    <option>No</option>
-                    <option>No estoy seguro/a</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;margin-top:16px">Quiero recibir la información</button>
-              <div class="privacy">No spam. Solo información relevante sobre el retiro.</div>
-              <div class="success" id="successMsg">Formulario preparado. Cuando lo conectes a tu sistema de captación, aquí recibirás los leads reales.</div>
-            </form>
-          </div>
+  <form id="leadForm" action="https://formspree.io/f/mnjglonl" method="POST">
+    <input type="hidden" name="source" value="meta_ads_formentera_2026">
+    <input type="hidden" name="_subject" value="Nuevo lead Formentera 2026">
+    <input type="hidden" name="_next" value="https://ireneamezcua.github.io/formentera-2026-gracias/">
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+      </div>
+      <div class="field full">
+        <label for="telefono">Teléfono / WhatsApp</label>
+        <input id="telefono" name="telefono" required>
+      </div>
+      <div class="field full">
+        <label for="motivacion">¿Qué te ha llamado la atención de este retiro?</label>
+        <textarea id="motivacion" name="motivacion" required></textarea>
+      </div>
+      <div class="field full">
+        <label for="salud">¿En qué punto estás ahora mismo con tu salud?</label>
+        <select id="salud" name="salud">
+          <option>Quiero empezar a cuidarme pero no sé por dónde</option>
+          <option>Ya me cuido, pero me falta claridad</option>
+          <option>Tengo problemas digestivos / inflamación</option>
+          <option>Busco parar y resetear hábitos</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="fechas">¿Tienes disponibilidad para las fechas?</label>
+        <select id="fechas" name="fechas">
+          <option>Sí</option>
+          <option>No</option>
+          <option>No estoy seguro/a</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:100%;margin-top:16px">
+      Quiero recibir la información
+    </button>
+
+    <div class="privacy">No spam. Solo información relevante sobre el retiro.</div>
+  </form>
+</div>
         </div>
       </div>
     </section>
