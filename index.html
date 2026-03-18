@@ -638,14 +638,7 @@
     if (menuBtn) {
       menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
     }
-    const leadForm = document.getElementById('leadForm');
-    const successMsg = document.getElementById('successMsg');
-    if (leadForm) {
-      leadForm.addEventListener('submit', function(e){
-        e.preventDefault();
-        successMsg.style.display = 'block';
-        leadForm.reset();
-      });
+   
     }
   </script>
 </body>
