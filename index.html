@@ -587,7 +587,7 @@
             <p>Déjanos tus datos y te enviaremos toda la información del retiro, próximos pasos y disponibilidad de plazas para esta edición.</p>
           </div>
           <div class="form-card">
-  <form id="leadForm" action="https://script.google.com/macros/s/AKfycby2JSbyA-PjQpDEKONrtiWS-iY9-buUHHI8NE81fjfmnYP2Uv2lzy2p6UqDw_WxDORf/exec" method="POST">
+  <form id="leadForm" action="https://script.google.com/macros/s/AKfycby2JSbyA-PjQpDEKONrtiWS-iY9-buUHHI8NE81fjfmnYP2Uv2lzy2p6UqDw_WxDORf/exec" method="POST" target="hidden_iframe">
     <input type="hidden" name="source" value="meta_ads_formentera_2026">
 
 
@@ -634,6 +634,7 @@
 
     <div class="privacy">No spam. Solo información relevante sobre el retiro.</div>
   </form>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 </div>
         </div>
       </div>
@@ -661,6 +662,30 @@
 </script>
 
 
-  
+<script>
+  let formSubmitted = false;
+
+  const leadForm = document.getElementById('leadForm');
+  const hiddenIframe = document.getElementById('hidden_iframe');
+
+  if (leadForm && hiddenIframe) {
+    leadForm.addEventListener('submit', function () {
+      formSubmitted = true;
+    });
+
+    hiddenIframe.addEventListener('load', function () {
+      if (formSubmitted) {
+        window.location.href = 'https://ireneamezcua.github.io/formentera-2026/gracias/';
+      }
+    });
+  }
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  }
+</script>
 </body>
 </html>
