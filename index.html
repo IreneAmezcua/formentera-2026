@@ -567,10 +567,8 @@
             <p>Déjanos tus datos y te enviaremos toda la información del retiro, próximos pasos y disponibilidad de plazas para esta edición.</p>
           </div>
           <div class="form-card">
-  <form id="leadForm" action="https://formspree.io/f/mnjglonl" method="POST">
-    <input type="hidden" name="source" value="meta_ads_formentera_2026">
-    <input type="hidden" name="_subject" value="Nuevo lead Formentera 2026">
-    <input type="hidden" name="_next" value="https://ireneamezcua.github.io/formentera-2026-gracias/">
+  <form id="leadForm" 
+
 
     <div class="form-grid">
       <div class="field">
@@ -641,5 +639,36 @@
    
     }
   </script>
+
+<script>
+  const form = document.getElementById("leadForm");
+
+  if (form) {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      // añadimos source para tracking
+      formData.append("source", "meta_ads_formentera_2026");
+
+      fetch("https://script.google.com/macros/s/AKfycby2JSbyA-PjQpDEKONrtiWS-iY9-buUHHI8NE81fjfmnYP2Uv2lzy2p6UqDw_WxDORf/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Formulario enviado correctamente");
+        form.reset();
+        console.log(result);
+      })
+      .catch(error => {
+        alert("Error al enviar el formulario");
+        console.error(error);
+      });
+    });
+  }
+</script>
+  
 </body>
 </html>
