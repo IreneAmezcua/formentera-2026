@@ -662,9 +662,15 @@
   const hiddenIframe = document.getElementById('hidden_iframe');
 
   if (leadForm && hiddenIframe) {
-    leadForm.addEventListener('submit', function () {
-      formSubmitted = true;
-    });
+ leadForm.addEventListener('submit', function () {
+  formSubmitted = true;
+
+  const button = leadForm.querySelector('button[type="submit"]');
+  if (button) {
+    button.disabled = true;
+    button.innerText = "Enviando...";
+  }
+});
 
     hiddenIframe.addEventListener('load', function () {
       if (formSubmitted) {
